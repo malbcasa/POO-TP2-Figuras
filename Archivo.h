@@ -38,12 +38,6 @@ class Archivo:public fstream {
 	
 	string get_cont();
 	
-	void* open();
-	
-	void write(string msg);
-	
-	void close(Archivo* fich);
-	
 	string set_mapa(Archivo& fich_in);
 	
 	Mapa get_mapa();

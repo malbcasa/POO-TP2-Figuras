@@ -14,10 +14,6 @@ class Archivo;
 
 class Mapa {
   private:
-    Figura *fig ;
-
-    Archivo *fil ;
-
     vector<int> resolucion;
 
     string  codigo;
@@ -42,7 +38,7 @@ class Mapa {
 	
 	int set_validez(Triangulo tri);
 	
-    string get_validez(Figura f);
+   
 
     void set_codigo(string marcador);
 
@@ -50,11 +46,7 @@ class Mapa {
 	
 	void show(int figtoshow);
 	
-	void showfig(Circulo circ);
 	
-	void showfig(Rectangulo rect);
-	
-	void showfig(Triangulo tri);
 
 };
 #endif

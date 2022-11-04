@@ -14,10 +14,6 @@ class Archivo;
 
 class Figura {
   private:
-    Mapa *m ;
-
-    Archivo *f ;
-
     string color;
 
     float perimetro;

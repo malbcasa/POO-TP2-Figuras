@@ -24,17 +24,7 @@ void Archivo::set_nom() {
 	cin >> nombre ;
 };
 
-/*
-void* Archivo::open(){
-	this->set_nom();
-	_fichero.open(nombre);
-	if (!_fichero)
-	{
-		cout << "Error al abrir " << nombre; 
-		exit(EXIT_FAILURE);
-	}
-	
-};*/
+
 string Archivo::get_nom() {	
 	return nombre;
 }
@@ -49,14 +39,6 @@ void Archivo::set_cont(string fname){
 	}
 };
 
-void Archivo::write(string msg){
-	msg.append("\n");
-	_fichero << msg;
-}
-
-void Archivo::close(Archivo* fich){
-	fich->_fichero.close();
-}
 
 string Archivo::set_mapa(Archivo& fich_in) {
 	ofstream fichero(nombre);

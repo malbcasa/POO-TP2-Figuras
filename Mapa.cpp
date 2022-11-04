@@ -94,8 +94,6 @@ int Mapa::set_validez(Triangulo tri){
 	
 }
 
-string Mapa::get_validez(Figura f) {
-}
 
 void Mapa::set_codigo(string marcador) {
 	codigo = marcador;
@@ -104,28 +102,7 @@ void Mapa::set_codigo(string marcador) {
 string Mapa::get_codigo() {
 	return codigo;
 }
-/*
-void Mapa::show(int numfig){
-	showfig(figuras[numfig]);
-}
-*/
-void Mapa::showfig(Circulo circ){
-	vector <int> centro;
-	centro = circ.get_centro();
-	int radio = circ.get_radio();
-	int dist = 0;
-	dist = sqrt(pow(centro[0],2) + pow(centro[1],2));
-	for(int i =0; i<resolucion [1] ; i++){
-		for(int j = 0; j<resolucion[0] ; j++){
-			if ( ((j <= (centro[0]+dist)) || (j <= (centro[0]-dist))) && ((i <= (centro[1]+dist)) || (i <= (centro[1]-dist)))){
-				cout << circ.get_color();
-			}else{
-				cout << codigo;
-			}
-		}
-		cout << "\n";
-	}
-};
+
 
 void Mapa::show(int numfig){
 
