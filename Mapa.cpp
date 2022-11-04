@@ -108,22 +108,25 @@ void Mapa::show(int numfig){
 
 	
 	vector<vector<int>> coord = this->figuras[numfig].get_coordenadas();
-	string** showmat = new string*[this->resolucion[1]];
+	char** showmat = new char*[this->resolucion[1]];
 	for (int i =0 ; i < this->resolucion[1] ; i++){
-		showmat[i]=new string[this->resolucion[0]];
+		showmat[i]=new char[this->resolucion[0]];
 	}
 	ofstream dibujo ("dibujo.txt");
 	
-	string color = this->figuras[numfig].get_color();
-	if(color.size() > 1){
-		color = color.substr(2,1);
+	string colorstr = this->figuras[numfig].get_color();
+	char colorch;
+	if(colorstr.size() > 1){
+		colorch = colorstr.substr(2,1)[0];
+	}else{
+		colorch = colorstr[0];
 	}
 	
 	
 	for(int i = 0; i < this->resolucion[1]; i++){
 		for(int j = 0; j < this->resolucion[0] ; j++){
 			
-			showmat[i][j] = "0";
+			showmat[i][j] = '0';
 			
 		}	
 		
@@ -132,16 +135,20 @@ void Mapa::show(int numfig){
 	for(int i = 0; i < coord.size(); i++){
 		
 		if( ((coord[i][0])) < ((this->resolucion[0]))  && ( ((coord[i][1])) < ((this->resolucion[1]))) ) {
-			showmat[coord[i][1]][coord[i][0]] = color;
+			showmat[coord[i][1]][coord[i][0]] = colorch;
 		}
 				
 	}
-	
+	int resolx = this->resolucion[0];
 	for(int i = this->resolucion[1]-1 ; i >= 0 ; i--){
-		for(int j = 0; j < this->resolucion[0] ; j++){
-				dibujo << showmat[i][j] ;
+		for(int j = 0; j < resolx ; j++){
+			if((resolx * 2) > 1024){
+				if((j%((resolx*2)/((resolx * 2)-1024))) != 0){
+					dibujo << int(showmat[i][j]) ;
+				}
+			}
 		}	
-		dibujo << "\n";
+		dibujo << '\n';
 	}
 	
 	

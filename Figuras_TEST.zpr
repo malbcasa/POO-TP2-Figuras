@@ -15,7 +15,7 @@ tab_width=4
 tab_use_spaces=0
 explorer_path=.
 inherits_from=
-current_source=Mapa.h
+current_source=Mapa.cpp
 path_char=\
 [source]
 path=main.cpp
@@ -35,7 +35,7 @@ path=Circulo.cpp
 cursor=41:21
 [source]
 path=Mapa.cpp
-cursor=96:0
+cursor=145:50
 open=true
 [source]
 path=Archivo.cpp
